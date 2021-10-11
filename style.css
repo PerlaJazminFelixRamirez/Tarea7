@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 1.2rem;
+  min-height: 100%;
+  margin: 30px;
+  border: 3px solid;
+  background: url("https://previews.123rf.com/images/lafifa/lafifa1709/lafifa170900170/85818494-fondo-geom%C3%A9trico-bajo-poligonal-fondo-abstracto-del-mosaico-en-color-azul-elemento-de-dise%C3%B1o-para-po.jpg");
+}
+
+.grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  background-color: #bdebeb;
+  font-family: Castellar;
+  font-size: 50px;
+  color: #010D37 ;
+}
+
+.navbar {
+  grid-area: navbar;
+  background-color:#bdebeb;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: #bdebeb;
+}
+
+.main {
+  grid-area: main;
+  background-color: #bdebeb;
+  font-family: Broadway;
+  font-size: 35px;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #bdebeb;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  100px
+    "navbar"  50px
+    "main"    auto
+    "sidebar" 100px
+    "footer"  20px;
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    /* grid-template-columns: 200px auto;
+    grid-template-rows: 100px 50px auto 100px;
+    grid-template-areas: 
+    "header  header"
+    "navbar  navbar"
+    "sidebar main"
+    "footer  footer"; */
+
+    grid-template:
+      "header  header" 100px
+      "navbar  navbar" 50px
+      "sidebar main"   auto
+      "footer  footer" 20px /
+      200px    auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-container {
+    grid-template:
+      "header  header header"  100px
+      "navbar  main   sidebar" auto
+      "footer  footer footer"  100px /
+      200px    auto   200px;
+  }
+}
